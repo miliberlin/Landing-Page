@@ -3,3 +3,389 @@
 - It should be clear which section is being viewed while scrolling through the page.
 - When clicking an item from the navigation menu, the link should scroll to the appropriate section (not jump!)
 */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,600,700|Raleway:400,400i,500&display=swap');
+
+
+/* Base Rules */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  background-color: #fffaf0;
+}
+
+/* Typography */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: ;
+  margin: 0.2em 0;
+  text-align: center;
+}
+
+h1 {
+  font-size: 4.5em;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+h2 {
+  font-size: 2.7em;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 2.4em;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.9em;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.5em;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+  text-align: left;
+  font-size: 1em;
+  margin: 1em 0 0;
+}
+
+li, a {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Font Awesome */
+
+.fas {
+  font-size: 3em;
+  text-align: center;
+  color: #db5461;
+}
+
+/* Grid */
+
+.page-wrapper {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-areas:
+  "nav"
+  "hero"
+  "newsletter"
+  "benefits"
+  "plan"
+  "contact";
+}
+
+/* Navigation */
+
+header {
+  grid-area: nav;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  height: 100px;
+}
+
+.logo-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 0 20px;
+}
+
+.navbar-menu {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  cursor: pointer;
+  max-width: 100%;
+  height: auto;
+}
+
+.navbar-menu {
+  padding: 0 20px;
+}
+
+@media (min-width: 600px) {
+  header {
+    grid-area: nav;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    height: 60px;
+  }
+
+  .logo-container {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .navbar-menu {
+    width: 50%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+}
+
+.nav-links li {
+  display: inline-block;
+  padding: 0 20px;
+  letter-spacing: 0.05em;
+}
+
+.nav-links li a {
+  transition: all 0.3s ease 0s;
+  color: white;
+  padding: 12px 20px;
+}
+
+.nav-links li a:hover {
+  color: #000;
+  background-color: #FFF;
+}
+
+
+
+/* Hero Image */
+
+.hero {
+  grid-area: hero;
+  background-image: url("../img/hero-img.jpg");
+  width: 100vw;
+  height: 80vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.hero h1 {
+  color: #fffaf0;
+  margin: 20%;
+}
+
+
+/* newsletter */
+
+#newsletter {
+  grid-area: newsletter;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.newsletter-container {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 5px;
+}
+
+.newsletter-element {
+  width: 30%;
+}
+
+.newsletter-container input[type=text], input[type=submit] {
+  text-align: center;
+  width: 100%;
+  padding: 12px;
+  margin: 8px 5px;
+  border: 1px solid #fffaf0;
+  box-sizing: border-box;
+}
+
+.newsletter-container input[type=submit] {
+  font-size: 1.1em;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  background-color: #e54b4b;
+  border: 2px solid #e54b4b;
+  color: #fffaf0;
+  transition: all 0.3s;
+  border: none;
+}
+
+.newsletter-container input[type=submit]:hover {
+  background-color: transparent;
+  border: 2px solid #e54b4b;
+  color: #e54b4b;
+  transform: scale(0.9);
+}
+
+@media (min-width: 600px) and (max-width: 780px) {
+  .newsletter-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+  }
+
+  .newsletter-container .newsletter-element {
+    width: 40%;
+  }
+
+  .newsletter-container input[type=submit] {
+    font-size: 0.9em;
+  }
+}
+
+/* Benefits */
+
+#benefits {
+  grid-area: benefits;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.benefits-card {
+  background-color: white;
+  width: 100%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  padding: 20px 30px;
+  margin: 20px;
+}
+
+.benefits-icon {
+  text-align: center;
+}
+
+@media (min-width: 600px) {
+  #benefits {
+    flex-flow: row wrap;
+  }
+  .benefits-card {
+    width: 30%;
+  }
+}
+
+#plan {
+  grid-area: plan;
+  background-image: url("../img/background-img.jpg");
+  width: 100vw;
+  height: 80vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  display: flex;
+}
+
+/* Contact */
+
+#contact {
+  grid-area: contact;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+#contact h3 {
+  text-align: center;
+}
+
+.contact-outer {
+  width: 100%;
+  padding: 20px;
+}
+
+@media (min-width: 600px) {
+  .contact-outer {
+    width: 50%;
+  }
+}
+
+.contact-inner {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.contact-inner input[type=text] {
+  text-align: left;
+}
+
+.contact-inner input[type=text], input[type=submit] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0px;
+  border: 1px solid #fffaf0;
+  box-sizing: border-box;
+}
+
+.contact-inner input[type=submit] {
+  width: 200px;
+  font-size: 1.1em;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  background-color: #e54b4b;
+  border: 2px solid #e54b4b;
+  color: #fffaf0;
+  transition: all 0.3s;
+  border: none;
+}
+
+.contact-inner input[type=submit]:hover {
+  background-color: transparent;
+  border: 2px solid #e54b4b;
+  color: #e54b4b;
+  transform: scale(0.9);
+}
+
+.contact-inner textarea {
+  height: 150px;
+}
