@@ -404,22 +404,23 @@ header {
 @media (min-width: 800px) {
   .contact-outer {
     width: 50%;
+    text-align: center;
   }
 }
 
 .contact-inner {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
+  align-items: center;
   padding: 20px;
+  width: 100%
 }
 
 .contact-inner input[type=text] {
-  text-align: left;
+  width: 100%;
 }
 
 .contact-inner input[type=text], input[type=submit] {
-  width: 100%;
   padding: 12px;
   margin: 8px 0px;
   border: 1px solid #fffaf0;
@@ -434,7 +435,6 @@ header {
   text-align: center;
   text-transform: uppercase;
   cursor: pointer;
-  display: inline-block;
   background-color: #e54b4b;
   border: 2px solid #e54b4b;
   color: #fffaf0;
@@ -451,6 +451,7 @@ header {
 
 .contact-inner textarea {
   height: 150px;
+  width: 100%;
 }
 
 
