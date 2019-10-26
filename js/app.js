@@ -19,10 +19,10 @@
  *
 */
 
-const navbar = document.querySelector(".navbar"); // <nav>
+const navbar = document.getElementsByTagName("nav"); // <nav>
 const navList = document.querySelector(".nav-list"); // <ul class="nav-list">
 const sections = document.getElementsByTagName("section");
-const navTitle = document.hasAttribute("[data-nav]");
+// const navTitle = document.hasAttribute("[data-nav]");
 const fragment = document.createDocumentFragment();
 
 /**
@@ -32,16 +32,19 @@ const fragment = document.createDocumentFragment();
 */
 
 document.addEventListener('DOMContentLoaded', function(event){
-  for (i = 0; i++) {
-    if (sections != undefined && navTitle != undefined) {
+  for (i = 0; i < sections.length; i++) {
+    const currentSection = sections[i];
+    if (currentSection.hasAttribute("data-nav")) {
       let link = document.createElement("a");
-      let linkText = document.createTextNode(navTitle);
+      let linkTitle = currentSection.getAttribute('data-nav');
+      let linkText = document.createTextNode(linkTitle);
       link.appendChild(linkText);
-      link.title = navTitle;
-      link.href = "#{id}";
-      document.ul.appendChild(link);
+      let currentSectionId = currentSection.getAttribute('id');
+      link.href = `#${currentSectionId}`;
+      let linkItem = document.createElement("li");
+      linkItem.appendChild(link);
+      navList.appendChild(linkItem);
     }
-    else { continue };
   }
 });
 
