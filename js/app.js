@@ -23,7 +23,6 @@ const navbar = document.getElementsByTagName("nav"); // <nav>
 const navList = document.querySelector(".nav-list"); // <ul class="nav-list">
 const sections = document.getElementsByTagName("section");
 // const navTitle = document.hasAttribute("[data-nav]");
-const fragment = document.createDocumentFragment();
 
 /**
  * End Global Variables
@@ -42,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function(event){
       let currentSectionId = currentSection.getAttribute('id');
       link.href = `#${currentSectionId}`;
       let linkItem = document.createElement("li");
+      linkItem.classList.add("nav-link");
       linkItem.appendChild(link);
       navList.appendChild(linkItem);
     }
@@ -57,9 +57,26 @@ document.addEventListener('DOMContentLoaded', function(event){
 
 
 // Add class 'active' to section when near top of viewport
+/* My thoughts:
+1. check if an element has surpassed 50% of the viewport. 
+2. if so, add a class or custom behaviour
+*/
 
 
 // Scroll to anchor ID using scrollTO event (don't jump))
+
+let linkItem = document.querySelectorAll('.nav-link');
+/*
+1. Click
+object.onclick = function(){myScript};
+OR
+object.addEventListener("click", myScript);
+
+2. Scroll
+window.scrollTo(x-coord, y-coord)
+window.scrollTo(options)
+-> behavior: 'smooth'
+*/
 
 
 /**
@@ -67,9 +84,3 @@ document.addEventListener('DOMContentLoaded', function(event){
  * Begin Events
  *
 */
-
-// Build menu
-
-// Scroll to section on link click
-
-// Set sections as active
