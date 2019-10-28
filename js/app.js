@@ -22,7 +22,6 @@
 const navbar = document.getElementsByTagName("nav"); // <nav>
 const navList = document.querySelector(".nav-list"); // <ul class="nav-list">
 const sections = document.getElementsByTagName("section");
-// const navTitle = document.hasAttribute("[data-nav]");
 
 /**
  * End Global Variables
@@ -58,29 +57,15 @@ document.addEventListener('DOMContentLoaded', function(event){
 
 // Add class 'active' to section when near top of viewport
 /* My thoughts:
-1. check if an element has surpassed 50% of the viewport. 
+1. Add Event Listener. check if an element has surpassed 50% of the viewport.
 2. if so, add a class or custom behaviour
 */
 
 
 // Scroll to anchor ID using scrollTO event (don't jump))
 
-let linkItem = document.querySelectorAll('.nav-link');
-/*
-1. Click
-object.onclick = function(){myScript};
-OR
-object.addEventListener("click", myScript);
+let navbarItem = document.querySelectorAll('.navbar a');
 
-2. Scroll
-window.scrollTo(x-coord, y-coord)
-window.scrollTo(options)
--> behavior: 'smooth'
-*/
-
-
-/**
- * End Main Functions
- * Begin Events
- *
-*/
+navbarItem.addEventListener ("click", function() {
+  navbarItem.scrollTo({behavior: "smooth"});
+  });
