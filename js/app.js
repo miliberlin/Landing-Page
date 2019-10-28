@@ -62,10 +62,15 @@ document.addEventListener('DOMContentLoaded', function(event){
 activeSection.classList.add("active");
 */
 
+
+
 // Scroll to anchor ID using scrollTO event (don't jump))
 
-let linkTarget = document.getElementsByClassName('.nav-link');
+let linkTarget = document.hasAttribute(".nav-link a");
 
-linkTarget.addEventListener ("click", function(event) {
-  linkTarget.scrollTo({behavior: "smooth"});
+linkTarget.addEventListener ("click", function smoothScroll(event) {
+  linkTarget.scrollIntoView({ 
+    block: "start",
+    behavior: "smooth"
   });
+})
