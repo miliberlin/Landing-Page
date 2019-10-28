@@ -59,13 +59,13 @@ document.addEventListener('DOMContentLoaded', function(event){
 /* My thoughts:
 1. Add Event Listener. check if an element has surpassed 50% of the viewport.
 2. if so, add a class or custom behaviour
+activeSection.classList.add("active");
 */
-
 
 // Scroll to anchor ID using scrollTO event (don't jump))
 
-let navbarItem = document.querySelectorAll('.navbar a');
+let linkTarget = document.getElementsByClassName('.nav-link');
 
-navbarItem.addEventListener ("click", function() {
-  navbarItem.scrollTo({behavior: "smooth"});
+linkTarget.addEventListener ("click", function(event) {
+  linkTarget.scrollTo({behavior: "smooth"});
   });
